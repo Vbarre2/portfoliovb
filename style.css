@@ -1,0 +1,2744 @@
+/* HEADER */
+
+body {
+    font-family: 'Jockey One', sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    background-color: #221831;
+    position: relative;
+    overflow-x: hidden; /* Pour éviter le défilement horizontal dû à l'image de fond */
+}
+
+body::before {
+    content: "";
+    background-image: url('Img_bg.png'); /* Chemin vers votre image */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.04; /* Réglez l'opacité pour obtenir l'effet souhaité */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Assurez-vous que l'image est en arrière-plan */
+}
+
+
+/* Styles du header */
+.site-header {
+    background: transparent;
+    padding: 10px 20px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: center; /* Centrer les éléments */
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 0;
+    position: relative;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    position: absolute;
+    left: 0; /* Aligner à gauche */
+}
+
+.contact-button {
+    position: absolute;
+    right: 0; /* Aligner à droite */
+}
+
+/* Icônes de réseaux sociaux avec style design */
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #FF007F, #FF5DA2);
+    color: #ffffff;
+    font-size: 1.2em;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(255, 0, 127, 0.5);
+}
+
+/* Logo centré */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logo img {
+    height: 50px;
+    transition: height 0.3s ease;
+}
+
+/* Bouton de contact avec style design */
+.contact-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #FF007F, #FF5DA2);
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 0.9em;
+    box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(255, 0, 127, 0.5);
+}
+
+/* Ligne de séparation */
+.separator-line {
+    width: 40%;
+    height: 1px;
+    background-color: #ffffff;
+    margin: 10px auto; /* Centrer la ligne */
+}
+
+
+/* Styles du menu principal */
+.main-navigation {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+/* Hamburger Button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Menu Items */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu li a:hover {
+    color: #ff0099;
+    transform: scale(1.1);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-icons {
+        margin-bottom: 10px;
+        position: static;
+    }
+
+    .contact-button {
+        margin-top: 10px;
+        padding: 8px 15px;
+        font-size: 0.8em;
+        position: static;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #221831;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        gap: 15px;
+        border-top: 1px solid #ff0099;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icons a {
+        font-size: 1em;
+        width: 35px;
+        height: 35px;
+    }
+
+    .logo img {
+        height: 35px;
+    }
+
+    .contact-button {
+        font-size: 0.7em;
+        padding: 6px 12px;
+    }
+}
+
+
+/* FOOTER */
+
+/* Contour rose en haut du footer */
+.footer-top-border {
+    height: 25px;
+    background-color: #FF007F;
+  }
+  
+  /* Style général pour le footer */
+  footer {
+    background-color: #1C1624;
+    color: #FFFFFF;
+    font-family: 'Jockey One', sans-serif;
+  }
+  
+  /* Conteneur du footer pour l'alignement centré */
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Style pour les liens du menu */
+  .footer-menu {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-menu li {
+    margin: 10px 0;
+  }
+  
+  .footer-menu li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .footer-menu li a:hover {
+    color: #FF007F;
+    transform: scale(1.1);
+  }
+  
+  /* Section des icônes de réseaux sociaux */
+  .footer-social {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .footer-social a {
+    color: #FFFFFF;
+    font-size: 1.5em;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .footer-social a:hover {
+    color: #FF007F;
+    transform: scale(1.2);
+  }
+  
+ /* Logo VB avec effet de capsule design */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #FF007F, #FF5DA2);
+    padding: 20px 30px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3); /* Ombre douce pour l'effet flottant */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .footer-logo:hover {
+    transform: translateY(-5px); /* Effet de "flottement" au survol */
+    box-shadow: 0 6px 20px rgba(255, 0, 127, 0.5); /* Accentuation de l'ombre au survol */
+  }
+  
+  .footer-logo img {
+    width: 60px;
+    height: auto;
+  }
+  
+  
+  /* Style responsive */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .footer-logo {
+      margin-top: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-menu li a {
+      font-size: 0.9em;
+    }
+  }
+  
+
+ /* INDEX */
+
+/* Conteneur de texte centré */
+.text-container {
+    max-width: 800px; /* Limite la largeur pour un bon centrage */
+    margin: 0 auto; /* Centre le conteneur */
+    text-align: left; /* Maintient le texte aligné à gauche */
+    margin-top: 100px;
+}
+
+/* Style pour Vincent Barré en Rubik One */
+.title-vincent-barre {
+    font-family: 'Rubik One', sans-serif;
+    font-size: 3em; /* Taille de police pour les grands écrans */
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 400; /* Réduction de l'épaisseur de la police */
+}
+
+/* Style pour le sous-titre en Jockey One */
+.subtitle {
+    font-family: 'Jockey One', sans-serif;
+    font-size: 1.2em;
+    color: #ff007f; /* Couleur rose pour le sous-titre */
+    margin-bottom: 10px;
+    font-weight: 400; /* Réduction de l'épaisseur de la police */
+}
+
+/* Style pour le paragraphe en Jockey One */
+.description {
+    font-family: 'Jockey One', sans-serif;
+    font-size: 1em;
+    line-height: 1.4; /* Réduit l'espacement entre les lignes */
+    color: #ffffff;
+    max-width: 100%; /* Permet au paragraphe de s'ajuster au conteneur */
+    text-align: justify; /* Justifie le texte pour un meilleur rendu */
+    text-align-last: left; /* Garde la dernière ligne alignée à gauche */
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+    .text-container {
+        margin-top: 50px; /* Réduit l'espace en haut pour mobile */
+        padding: 0 15px; /* Ajoute du padding pour éviter que le texte touche les bords */
+    }
+
+    .title-vincent-barre {
+        font-size: 2.2em; /* Réduit la taille pour mobile */
+    }
+
+    .subtitle {
+        font-size: 1em; /* Taille de police plus petite pour le sous-titre */
+        margin-bottom: 8px;
+    }
+
+    .description {
+        font-size: 0.9em; /* Taille de police légèrement plus petite pour le texte descriptif */
+        line-height: 1.6; /* Augmente l'espacement entre les lignes pour améliorer la lisibilité */
+    }
+}
+
+/* Responsivité pour les très petits écrans */
+@media (max-width: 480px) {
+    .title-vincent-barre {
+        font-size: 1.8em; /* Réduction supplémentaire pour très petits écrans */
+    }
+
+    .subtitle {
+        font-size: 0.9em; /* Réduction du sous-titre */
+    }
+
+    .description {
+        font-size: 0.85em; /* Réduction de la taille de police pour le texte descriptif */
+        line-height: 1.5; /* Ajuste l'espacement pour éviter que le texte soit trop serré */
+    }
+}
+
+/* Section Thèmes */
+.themes-section {
+    background-color: #374B6B;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 110px;
+}
+
+.section-title {
+    font-family: 'Jockey One', sans-serif;
+    font-size: 2em;
+    color: #ffffff;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 5px;
+    background-color: #FF007F;
+    margin: 10px auto 0;
+}
+
+.themes-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.theme-card {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-card:hover,
+.theme-card:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.theme-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.theme-card:hover img,
+.theme-card:focus-within img {
+    filter: brightness(1);
+    transform: scale(1.1);
+}
+
+.theme-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.theme-card:hover .theme-overlay,
+.theme-card:focus-within .theme-overlay {
+    opacity: 1;
+}
+
+.theme-overlay span {
+    font-family: 'Jockey One', sans-serif;
+    font-size: 1.5em;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Rendre les cartes cliquables */
+.theme-card a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    z-index: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .themes-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .theme-card {
+        width: 90%; /* Ajuste la largeur pour les petits écrans */
+        height: 200px; /* Fixe une hauteur pour éviter qu'elle disparaisse */
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .theme-overlay span {
+        font-size: 1.2em; /* Réduit la taille du texte dans l'overlay */
+    }
+
+    .theme-card {
+        width: 100%; /* Utilise toute la largeur sur petits écrans */
+        height: 180px; /* Hauteur réduite pour mobile */
+    }
+}
+
+
+/* Scroll Indicator */
+.scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px; /* Espace augmenté pour placer l'indicateur plus bas */
+    color: #FF007F;
+    font-family: 'Jockey One', sans-serif;
+    font-size: 1.5em; /* Texte plus grand */
+    animation: fade-in 2s ease;
+}
+
+.scroll-indicator span {
+    margin-bottom: 15px; /* Ajustement pour un meilleur espacement */
+}
+
+.scroll-indicator .mouse {
+    width: 32px; /* Augmente la largeur de l'icône */
+    height: 52px; /* Augmente la hauteur de l'icône */
+    border: 2px solid #FF007F;
+    border-radius: 16px;
+    position: relative;
+}
+
+.scroll-indicator .mouse .wheel {
+    width: 6px; /* Augmente la largeur de la molette */
+    height: 12px; /* Augmente la hauteur de la molette */
+    background-color: #FF007F;
+    border-radius: 3px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll-wheel 1.5s infinite;
+}
+
+/* Animation for wheel */
+@keyframes scroll-wheel {
+    0% {
+        opacity: 1;
+        transform: translateY(0) translateX(-50%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(14px) translateX(-50%);
+    }
+}
+
+
+/* Section Compétences */
+.skills-section {
+    background-color: #374B6B; /* Couleur de fond bleu */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.skills-title {
+    font-family: 'Jockey One', sans-serif;
+    font-size: 2em;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 400; /* Réduction de l'épaisseur de la police */
+}
+
+.skills-highlight {
+    color: #FF007F;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background-color: #52698A;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #ffffff;
+}
+
+.skill-icon {
+    font-size: 2em;
+    color: #FF007F;
+}
+
+.skill-card h3 {
+    font-family: 'Jockey One', sans-serif;
+    font-size: 1.2em;
+    margin: 0 0 10px;
+    font-weight: 400; /* Réduction de l'épaisseur de la police */
+}
+
+.skill-card p {
+    font-family: 'Jockey One', sans-serif;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr; /* Passe à une colonne */
+    }
+
+    .skills-title {
+        font-size: 1.8em; /* Réduit la taille du titre */
+    }
+
+    .skill-card {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-title {
+        font-size: 1.5em;
+    }
+
+    .skill-card h3 {
+        font-size: 1em; /* Réduit la taille des titres dans les cartes de compétences */
+    }
+
+    .skill-card p {
+        font-size: 0.85em; /* Réduit la taille du texte des descriptions */
+    }
+
+    .skill-icon {
+        font-size: 1.5em; /* Réduit la taille de l'icône */
+    }
+}
+
+/* Section Logiciels avec formes sur les côtés */
+/* Section Logiciels avec formes sur les côtés */
+.software-section {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.software-section::before,
+.software-section::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background-color: #FF007F;
+    border-radius: 50%;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+
+
+.software-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+    gap: 20px;
+    max-width: 400px;
+    width: 100%;
+    justify-items: center; /* Centre chaque carte individuellement */
+}
+
+.software-card {
+    background-color: #52698A;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.software-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.software-card img {
+    width: 80%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.software-card:hover img {
+    transform: scale(1.2);
+}
+
+.software-card .app-name {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Jockey One', sans-serif;
+    font-size: 1em;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 0;
+    opacity: 0;
+    transition: bottom 0.3s ease, opacity 0.3s ease;
+}
+
+.software-card:hover .app-name {
+    bottom: 0;
+    opacity: 1;
+}
+
+/* Bouton "Voir la suite" */
+.see-more-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #FF007F;
+    color: #ffffff;
+    font-family: 'Jockey One', sans-serif;
+    font-size: 1em;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.see-more-button:hover {
+    background-color: #cc0069;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .software-container {
+        grid-template-columns: 1fr; /* Une colonne pour petits écrans */
+        gap: 15px;
+    }
+
+    .software-card {
+        width: 100px;
+        height: 100px;
+    }
+
+    .software-card .app-name {
+        font-size: 0.85em;
+    }
+
+    .software-section::before,
+    .software-section::after {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Style général de la section */
+.about-section {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto 40px auto; /* Ajoute un espace en bas pour séparer des autres éléments */
+}
+
+/* Titre À Propos */
+.about-title {
+    font-family: 'Jockey One', sans-serif;
+    font-size: 2em;
+    color: #000000;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.about-title::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40px;
+    height: 5px;
+    background-color: #FF007F;
+}
+
+/* Description de la section */
+.about-description {
+    font-family: 'Jockey One', sans-serif;
+    font-size: 1em;
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Bouton En savoir plus */
+.about-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FF007F;
+    color: #ffffff;
+    font-family: 'Jockey One', sans-serif;
+    font-size: 1em;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.about-button:hover {
+    background-color: #cc0069;
+}
+
+/* Section Contact */
+.contact-area {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Titre Contact */
+.contact-header {
+    font-family: 'Jockey One', sans-serif;
+    font-size: 2.5em;
+    color: #000000;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.contact-header::before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 5px;
+    background-color: #FF007F;
+}
+
+/* Icônes Réseaux Sociaux */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.contact-icons a {
+    width: 60px;
+    height: 60px;
+    background-color: #FF007F;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.5em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 15px rgba(255, 0, 127, 0.3); /* Effet d'ombre */
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+.contact-icons a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(255, 0, 127, 0.4); /* Ombre plus intense au survol */
+}
+
+/* Bouton Envoyer un Message */
+.contact-message-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #FF007F;
+    color: #ffffff;
+    font-family: 'Jockey One', sans-serif;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 15px rgba(255, 0, 127, 0.3); /* Effet d'ombre */
+}
+
+.contact-message-button:hover {
+    background-color: #cc0069;
+    box-shadow: 0 10px 20px rgba(255, 0, 127, 0.4); /* Ombre plus intense au survol */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .contact-area {
+        max-width: 100%;
+    }
+
+    .contact-header {
+        font-size: 2em;
+    }
+
+    .contact-icons {
+        gap: 20px;
+    }
+
+    .contact-icons a {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3em;
+    }
+
+    .contact-message-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-header {
+        font-size: 1.8em;
+    }
+
+    .contact-icons {
+        gap: 15px;
+    }
+
+    .contact-icons a {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2em;
+    }
+
+    .contact-message-button {
+        padding: 8px 18px;
+        font-size: 0.9em;
+    }
+}
+
+
+/* MES PROJETS */
+
+/* Section Introduction des Projets */
+.projects-intro {
+    color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.projects-title {
+    font-family: 'Rubik One', sans-serif;
+    font-size: 3.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.projects-title .highlight {
+    color: #FF007F;
+    font-size: 0.6em;
+    display: block;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.projects-description {
+    font-family: 'Jockey One', sans-serif;
+    font-size: 1em;
+    line-height: 1.6;
+    color: #ffffff;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: justify; /* Justifie le texte */
+}
+
+/* Section des projets principaux */
+.top-projects {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.top-projects h2 {
+    font-family: 'Jockey One', sans-serif;
+    font-size: 2em;
+    color: #374B6B;
+    margin-bottom: 30px;
+}
+
+/* Carrousel des projets */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;  /* Centrage du carrousel */
+    overflow: hidden;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center; /* Assure que les éléments sont centrés */
+    align-items: center; /* S'assure que les items sont alignés au centre */
+}
+
+/* Piste du carrousel */
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Élément individuel du carrousel */
+.carousel-item {
+    flex: 0 0 100%; /* Chaque slide occupe 100% de la largeur */
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+/* Carte projet */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    width: 90%; /* Largeur de la carte en pourcentage pour s'adapter à l'écran mobile */
+    max-width: 280px; /* Largeur maximale de la carte */
+    padding: 15px;
+    background: linear-gradient(135deg, #ffffff, #fcebf6); /* Dégradé de couleur */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05); /* Zoom de l'image au survol */
+}
+
+.project-card h3 {
+    font-size: 1.2em; /* Taille de police adaptée pour le mobile */
+    color: #FF007F;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.project-card p {
+    font-size: 1em;
+    color: #555;
+    margin: 5px 0;
+    text-align: justify; /* Justifie le texte */
+}
+
+.project-card p strong {
+    color: #333;
+}
+
+/* Boutons de navigation du carrousel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #FF007F;
+    color: #ffffff;
+    font-family: 'Jockey One', sans-serif;
+    font-size: 1em; /* Taille de police réduite pour le mobile */
+    text-transform: uppercase;
+    border-radius: 8px;
+    padding: 10px 15px;
+    z-index: 10;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 15px rgba(255, 0, 127, 0.3); /* Effet d'ombre */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: #cc0069;
+    box-shadow: 0 10px 20px rgba(255, 0, 127, 0.4); /* Ombre plus intense au survol */
+}
+
+/* Positionnement des boutons pour mobile */
+.carousel-btn.prev-btn {
+    left: 10px; /* Rapproche le bouton de la gauche pour mobile */
+}
+
+.carousel-btn.next-btn {
+    right: 10px; /* Rapproche le bouton de la droite pour mobile */
+}
+
+/* Responsivité */
+@media (min-width: 768px) {
+    .project-card {
+        max-width: 250px; /* Taille maximale pour tablettes */
+    }
+    .carousel-btn {
+        font-size: 1.1em; /* Augmente légèrement la taille de police des boutons */
+        padding: 12px 18px; /* Augmente le padding pour tablettes */
+    }
+}
+
+@media (min-width: 1024px) {
+    .carousel-item {
+        flex: 0 0 100%; /* Affiche un élément à la fois sur grand écran */
+    }
+    .project-card {
+        max-width: 300px; /* Taille de carte plus grande sur desktop */
+    }
+}
+
+/* Style pour les boutons de filtre */
+.filter-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    background-color: #FF007F;
+    color: #ffffff;
+    font-family: 'Jockey One', sans-serif;
+    font-size: 1em;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 25px; /* Coins arrondis pour un look moderne */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 0, 127, 0.3); /* Ombre légère */
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: width 0.5s ease, height 0.5s ease, top 0.5s ease, left 0.5s ease;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.filter-btn:hover::before {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+}
+
+.filter-btn:hover {
+    background-color: #cc0069;
+    box-shadow: 0 6px 15px rgba(255, 0, 127, 0.5); /* Ombre plus intense au survol */
+    color: #ffffff;
+}
+
+.filter-btn:focus {
+    outline: none;
+}
+
+.filter-btn.active {
+    background-color: #cc0069; /* Couleur différente pour le bouton actif */
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.5); /* Ombre plus intense pour le bouton actif */
+}
+
+.all-projects {
+    text-align: center;
+    max-width: 1200px; /* Largeur maximale de la section */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.projects-list {
+    display: flex;
+    flex-wrap: wrap; /* Permet d'aller à la ligne pour les éléments supplémentaires */
+    justify-content: center; /* Centre les éléments sur la ligne */
+    gap: 20px; /* Espacement entre les cartes */
+}
+
+.project-card {
+    width: calc(33.333% - 20px); /* Largeur de chaque carte pour en avoir trois par ligne, moins l'espace entre les cartes */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.project-card h3 {
+    color: #FF007F;
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+.project-card p {
+    font-size: 1em;
+    color: #333;
+    margin-top: 10px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Élément légèrement déplacé vers le haut */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Ombre plus forte au survol */
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        width: 100%; /* Une carte par ligne pour les écrans plus petits */
+    }
+}
+
+
+
+/* SINGLE */
+
+/* Main Container */
+.single-project-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px; /* Réduction du padding */
+}
+
+/* Layout */
+.single-project-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 20px; /* Réduction de l'espace entre les colonnes */
+    align-items: start; /* Aligne tout en haut */
+}
+
+@media (max-width: 768px) {
+    .single-project-layout {
+        grid-template-columns: 1fr;
+        gap: 15px; /* Réduction de l'espace pour mobile */
+    }
+}
+
+/* Image principale */
+.single-project-image-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    margin-bottom: 30px; /* Réduction de l'espace sous l'image */
+}
+
+.single-project-image {
+    width: 100%;
+    max-width: 450px; /* Réduction de la largeur maximale */
+    height: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.single-project-image:hover {
+    transform: scale(1.03);
+}
+
+/* Contenu principal */
+.single-project-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Réduction de l'espacement vertical */
+}
+
+.single-project-title {
+    font-size: 2rem; /* Réduction de la taille du titre */
+    margin: 0;
+    color: #f2f2f2;
+}
+
+.single-project-meta {
+    font-size: 0.9rem; /* Réduction de la taille du texte */
+    color: #a5a5a5;
+}
+
+/* Description */
+.single-project-description {
+    margin-bottom: 15px; /* Réduction de l'espace sous la description */
+}
+
+.single-project-description h2 {
+    font-size: 1.5rem; /* Réduction de la taille du sous-titre */
+    color: #FF007F;
+    margin-bottom: 10px; /* Réduction de l'espace sous le sous-titre */
+}
+
+.single-project-description p {
+    font-size: 0.9rem; /* Réduction de la taille du texte */
+    color: #ccc;
+    line-height: 1.4; /* Réduction de l'espacement entre les lignes */
+    margin-bottom: 8px; /* Réduction de l'espace entre les paragraphes */
+    text-align: left;
+}
+
+/* Détails techniques */
+.single-project-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 0; /* Ajustement de la marge pour compenser l'espace */
+    gap: 15px; /* Espacement entre les éléments */
+    height: auto;
+    align-items: flex-start; /* Aligne le contenu à gauche */
+}
+
+.single-project-details h2 {
+    font-size: 1.5rem; /* Réduction de la taille du sous-titre */
+    margin-bottom: 10px; /* Réduction de l'espace sous le titre */
+    color: #FF007F;
+}
+
+.single-project-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Ajoute de l'espace entre les éléments */
+}
+
+.single-project-details ul li {
+    font-size: 0.9rem; /* Réduction de la taille du texte */
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Réduction de l'espacement */
+}
+
+/* Logo de l'application */
+.logiciel-logo-container {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    margin-left: 0; /* Suppression du centrage */
+    margin-right: auto; /* Place le logo à gauche */
+}
+
+.logiciel-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Nom de l'application */
+.logiciel-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Hover Effects */
+.logiciel-logo-container:hover {
+    transform: scale(1.05);
+}
+
+.logiciel-logo-container:hover .logiciel-logo {
+    transform: scale(1.05);
+}
+
+.logiciel-logo-container:hover .logiciel-name {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .single-project-title {
+        font-size: 1.8rem; /* Réduction du titre pour mobile */
+    }
+
+    .single-project-description p {
+        font-size: 0.8rem; /* Réduction du texte pour mobile */
+    }
+
+    .single-project-details ul li {
+        font-size: 0.8rem; /* Réduction du texte pour mobile */
+    }
+
+    .logiciel-logo-container {
+        width: 70px; /* Réduction du logo pour mobile */
+        height: 70px;
+    }
+}
+
+/* Section Lien */
+.single-project-link {
+    margin-top: 20px; /* Espacement au-dessus */
+    margin-bottom: 30px; /* Ajout d'espace en dessous pour séparer du contenu suivant */
+    text-align: center;
+}
+
+.project-link-button {
+    display: inline-block;
+    background-color: #FF007F;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 400; /* Réduction de l'épaisseur de la police */
+}
+
+.project-link-button:hover {
+    background-color: #cc0066;
+    transform: scale(1.05);
+}
+
+/* Section Version 0 */
+.single-project-version {
+    margin-top: 30px; /* Espacement au-dessus */
+    display: flex;
+    flex-direction: column; /* Aligne le titre et l'image verticalement */
+    align-items: center; /* Centre horizontalement le contenu */
+    justify-content: center; /* Centre verticalement */
+    text-align: center;
+    width: 100%; /* Prend toute la largeur de la page */
+}
+
+.single-project-version h2 {
+    font-size: 1.5rem; /* Taille du titre modérée */
+    color: #FF007F;
+    margin-bottom: 15px; /* Espace entre le titre et l'image */
+}
+
+.version-0-container {
+    display: flex;
+    justify-content: center; /* Centre l'image horizontalement */
+    align-items: center; /* Centre verticalement si nécessaire */
+    width: 100%; /* Prend toute la largeur */
+}
+
+.version-0-image {
+    max-width: 400px; /* Taille maximale pour éviter qu'elle ne soit trop grande */
+    width: 100%; /* S'adapte à la largeur disponible */
+    height: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre subtile */
+    margin: 0 auto; /* Centre horizontalement */
+    transition: transform 0.3s ease;
+}
+
+.version-0-image:hover {
+    transform: scale(1.05); /* Zoom léger au survol */
+}
+
+/* Responsiveness pour mobile */
+@media (max-width: 768px) {
+    .single-project-version h2 {
+        font-size: 1.3rem; /* Réduction de la taille du titre */
+    }
+
+    .version-0-image {
+        max-width: 100%; /* Image s'adapte entièrement sur mobile */
+        height: auto;
+    }
+}
+
+
+
+/* Slider Section */
+.slider-section {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.slider-text {
+    margin-bottom: 20px;
+}
+
+.slider-text h2 {
+    font-size: 1.8rem;
+    color: #FF007F;
+    margin-bottom: 10px;
+}
+
+.slider-text p {
+    font-size: 1rem;
+    color: #a5a5a5;
+}
+
+/* Slider Container */
+.custom-slider-container {
+    position: relative;
+    max-width: 400px; /* Largeur ajustée pour correspondre aux affiches */
+    height: calc(400px * 1.333); /* Ratio 4:3 (hauteur = largeur * 4/3) */
+    margin: 20px auto; /* Centre le slider horizontalement */
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre subtile */
+    display: flex;
+    align-items: center; /* Centre les images verticalement */
+    justify-content: center; /* Centre les images horizontalement */
+}
+
+/* Images */
+.custom-slider-images {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+    width: 200%; /* Deux images côte à côte */
+    height: 100%; /* Remplit la hauteur du conteneur */
+}
+
+.custom-slider-image {
+    width: 100%;
+    height: 100%; /* Ajuste l'image à la hauteur du conteneur */
+    object-fit: cover; /* Conserve le ratio tout en remplissant l'espace */
+}
+
+/* Buttons */
+.custom-slider-prev,
+.custom-slider-next {
+    position: absolute;
+    top: 50%; /* Centre verticalement */
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #FF007F, #FF5DA2);
+    color: #ffffff;
+    border: none;
+    font-size: 1.2rem; /* Taille des boutons */
+    border-radius: 50%;
+    width: 40px; /* Taille ajustée des boutons */
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 10; /* Assure que les boutons apparaissent au-dessus */
+}
+
+/* Bouton Précédent */
+.custom-slider-prev {
+    left: 5px; /* Place le bouton en dehors du slider */
+}
+
+/* Bouton Suivant */
+.custom-slider-next {
+    right: 5px; /* Place le bouton en dehors du slider */
+}
+
+/* Hover Effects */
+.custom-slider-prev:hover,
+.custom-slider-next:hover {
+    transform: scale(1.2) translateY(-50%);
+    box-shadow: 0 6px 20px rgba(255, 0, 127, 0.5);
+}
+
+/* Boutons de contrôle pour mobile */
+@media (max-width: 768px) {
+    .custom-slider-container {
+        max-width: 100%;
+        height: auto; /* Ajuste automatiquement la hauteur pour les petits écrans */
+    }
+
+    .custom-slider-next {
+        right: 5px; /* Idem pour le bouton suivant */
+    }
+
+    .custom-slider-prev,
+    .custom-slider-next {
+        width: 35px; /* Boutons légèrement plus petits sur mobile */
+        height: 35px;
+        font-size: 1rem;
+        z-index: 15; /* S'assure que les boutons restent au-dessus de tout autre élément */
+    }
+
+    .custom-slider-container {
+        max-width: 100%; /* Largeur du slider ajustée pour les écrans mobiles */
+    }
+
+    .custom-slider-images {
+        width: 200%; /* Toujours deux images côte à côte */
+        height: 100%; /* Remplit la hauteur */
+    }
+
+    .custom-slider-image {
+        width: 100%; /* Les images remplissent toute la largeur du conteneur */
+    }
+}
+
+
+
+/* ACA */
+
+/* Section générale des projets */
+.academic-projects {
+    padding: 40px 20px;
+    background-color: #1e1e2f; /* Couleur sombre pour contraster avec les cartes */
+}
+
+/* Liste des projets */
+.academic-project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Centrage des boutons de filtre */
+.academic-filters {
+    display: flex;
+    justify-content: center; /* Centre les boutons horizontalement */
+    flex-wrap: wrap; /* Permet un retour à la ligne si nécessaire */
+    margin: 20px 0; /* Ajoute un espacement autour des boutons */
+}
+
+/* Boutons de filtre */
+.academic-filter-btn {
+    background-color: #FF007F; /* Couleur principale */
+    color: #ffffff;
+    font-family: 'Jockey One', sans-serif;
+    font-size: 1em;
+    padding: 10px 20px; /* Taille des boutons */
+    margin: 5px; /* Espacement entre les boutons */
+    border: none;
+    border-radius: 25px; /* Coins arrondis pour un look moderne */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 0, 127, 0.3); /* Ombre légère */
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Effet circulaire au survol */
+.academic-filter-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2); /* Cercle clair */
+    border-radius: 50%;
+    transition: width 0.5s ease, height 0.5s ease, top 0.5s ease, left 0.5s ease;
+    transform: translate(-50%, -50%);
+    z-index: 0; /* Derrière le texte */
+}
+
+/* Réduction circulaire au survol */
+.academic-filter-btn:hover::before {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+}
+
+/* Effets de hover */
+.academic-filter-btn:hover {
+    background-color: #cc0069; /* Couleur plus foncée au survol */
+    box-shadow: 0 6px 15px rgba(255, 0, 127, 0.5); /* Ombre plus intense */
+    color: #ffffff;
+}
+
+/* Bouton actif */
+.academic-filter-btn.active {
+    background-color: #cc0069; /* Couleur différente pour le bouton actif */
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.5); /* Ombre accentuée */
+}
+
+/* Suppression des bordures au focus */
+.academic-filter-btn:focus {
+    outline: none;
+}
+
+/* Style des cartes */
+.academic-project-card {
+    position: relative;
+    width: 100%;
+    max-width: 300px; /* Taille maximale des cartes */
+    height: 400px; /* Hauteur uniforme */
+    display: none; /* Par défaut, masqué pour être géré par le JS */
+    overflow: hidden;
+    border-radius: 20px; /* Coins arrondis pour un design moderne */
+    background: #ffffff; /* Fond clair pour contraster avec l'arrière-plan */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none; /* Supprime le soulignement des liens */
+}
+
+.academic-project-card.active {
+    display: block; /* Affiché lorsque le JS applique cette classe */
+}
+
+.academic-project-card img {
+    position: absolute;
+    top: 50%; /* Centre verticalement */
+    left: 50%; /* Centre horizontalement */
+    width: 135%; /* Réduit la taille des images */
+    height: auto; /* Garde les proportions */
+    transform: translate(-50%, -50%); /* Centre l'image */
+    z-index: 1; /* Place l'image en arrière-plan */
+    filter: brightness(0.4); /* Assombrit légèrement l'image pour rendre le texte lisible */
+    transition: filter 0.3s ease;
+}   
+
+.academic-project-card:hover img {
+    filter: brightness(1); /* Éclaircit l'image au survol */
+}
+
+/* Titre du projet */
+.academic-project-title {
+    position: absolute;
+    top: 10%; /* Centre verticalement */
+    left: 50%; /* Centre horizontalement */
+    transform: translate(-50%, -50%); /* Corrige le point de référence */
+    z-index: 2; /* Par-dessus l'image */
+    font-size: 1rem;
+    color: #ffffff;
+    font-family: 'Rubik One', sans-serif;
+    background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    padding: 8px 12px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Ombre subtile */
+    font-weight: 400; /* Réduction de l'épaisseur de la police */
+    text-align: center; /* Aligne le texte au centre */
+    width: 80%; /* Facultatif : pour contrôler la largeur du titre */
+}
+
+
+/* Description du projet */
+.academic-project-description {
+    position: absolute;
+    bottom: 20px; /* Distance du bas */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; /* Par-dessus l'image */
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: 'Jockey One', sans-serif;
+    background: rgba(0, 0, 0, 0.7); /* Fond sombre semi-transparent */
+    padding: 10px 15px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 90%; /* Limite la largeur pour les petits écrans */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Ombre subtile */
+}
+
+/* Titre des projets */
+.projects-title {
+    font-size: 2.5em;
+    color: #ffffff;
+    font-family: 'Rubik One', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+    word-wrap: break-word; /* Permet de couper les mots si nécessaire */
+}
+
+.projects-title .highlight {
+    color: #FF007F; /* Accentue le mot mis en avant */
+}
+
+/* Description des projets */
+.projects-description {
+    font-size: 1.2em;
+    color: #ffffff;
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .projects-title {
+        font-size: 2em; /* Réduit la taille pour les écrans moyens */
+    }
+
+    .projects-description {
+        font-size: 1em; /* Réduit légèrement la description */
+    }
+
+    .academic-filter-btn {
+        font-size: 0.9em; /* Taille réduite pour les boutons */
+        padding: 8px 16px; /* Ajuste les dimensions des boutons */
+    }
+
+    .academic-project-card {
+        max-width: 90%; /* S'adapte à la largeur de l'écran */
+        margin: 0 auto; /* Centre les cartes */
+    }
+
+    .academic-project-title {
+        font-size: 1.1rem; /* Taille réduite sur mobile */
+    }
+
+    .academic-project-description {
+        font-size: 0.9rem; /* Description légèrement plus petite */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .projects-title {
+        font-size: 1.8em; /* Réduit davantage pour les petits écrans */
+    }
+
+    .projects-description {
+        font-size: 0.9em;
+    }
+
+    .academic-filter-btn {
+        font-size: 0.8em; /* Plus petit pour les très petits écrans */
+        padding: 6px 14px;
+    }
+
+    .academic-project-title {
+        font-size: 1rem; /* Taille encore réduite pour les très petits écrans */
+    }
+
+    .academic-project-description {
+        font-size: 0.85rem; /* Description plus compacte */
+    }
+
+    .academic-project-card {
+        max-width: 90%; /* Adapte la largeur des cartes */
+        margin: 0 auto; /* Centre les cartes */
+    }
+}
+
+/* CONTACT */
+
+/* Styles généraux pour la page Contact */
+.custom-contact {
+    background-color: rgba(3, 3, 3, 0.4); /* Fond avec une opacité de 90% */
+    color: #ffffff; /* Texte sombre */
+    font-family: 'Jockey One', sans-serif;
+    padding: 40px 20px;
+}
+
+.custom-contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Titre principal */
+.custom-contact h2,
+.custom-contact h3 {
+    color: #ff007f;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Section des informations */
+.custom-contact-details {
+    margin-bottom: 40px;
+    text-align: center; /* Centrer tout dans cette section */
+}
+
+.custom-contact-details p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.custom-contact-details a {
+    color: #ff007f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.custom-contact-details a:hover {
+    text-decoration: underline;
+}
+
+/* Image en rond */
+.custom-contact-image {
+    width: 250px; /* Largeur de l'image */
+    height: 250px; /* Hauteur de l'image pour un carré parfait */
+    border-radius: 50%; /* Rend l'image ronde */
+    object-fit: cover; /* Coupe l'image pour qu'elle rentre dans le cercle */
+    margin: 20px auto; /* Espacement autour de l'image */
+    display: block; /* Centrer l'image */
+    border: 4px solid #ff007f; /* Bordure rose pour l'accent */
+}
+
+/* Section de la carte */
+.custom-contact-map {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.custom-contact-map iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour le formulaire */
+.custom-contact-form {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #222;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.custom-form-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #FF007F;
+}
+
+.custom-contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.custom-contact-form label {
+    font-size: 16px;
+    color: #ddd;
+}
+
+.custom-contact-form input,
+.custom-contact-form textarea {
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Jockey one', sans-serif; /* Ajoutez cette ligne pour uniformiser la police */
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Bouton */
+.custom-contact-form button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #FF007F;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.custom-contact-form button:hover {
+    background-color: #ff005a;
+}
+
+
+
+/* SKILLS */
+/* Section générale */
+.soft-skills-section {
+    text-align: center;
+    margin: 50px auto;
+    font-family: 'Rubik One', sans-serif;
+    padding: 20px;
+    color: #ffffff;
+    border-radius: 15px;
+}
+
+.soft-skills-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    color: #fff;
+    font-family: 'Jockey One', sans-serif;
+}
+
+/* Conteneur des cartes */
+.skill-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+/* Cartes */
+.skill-card {
+    background: #202020;
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    min-width: 250px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    transform: translateY(0);
+
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 25px rgba(255, 0, 127, 0.4);
+    background: linear-gradient(180deg, #333, #202020);
+}
+
+/* Titre centré avec dégradé */
+.skill-title-container {
+    background: linear-gradient(90deg, #FF007F, #FF77A9);
+    padding: 20px 0;
+    color: #FF007F;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+}
+
+.skill-card:hover .skill-title-container {
+    background: linear-gradient(90deg, #FF77A9, #FF007F);
+}
+
+/* Corps de la carte */
+.skill-card-body {
+    padding: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #FF007F;
+    font-weight: 400;
+    text-align: left;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+/* Animation subtile sur le texte */
+.skill-card-body p {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.skill-card:hover .skill-card-body p {
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .skill-card-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .soft-skills-title {
+        font-size: 2rem;
+    }
+
+    .skill-card {
+        max-width: 90%;
+    }
+}
+
+/* Animation d'entrée */
+.skill-card-container {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Section générale */
+.hard-skills-section {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    font-family: 'Rubik One', sans-serif;
+}
+
+.hard-skills-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 400; /* Réduction de l'épaisseur de la police */
+}
+
+/* Conteneur des compétences */
+.hard-skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    font-weight: 400; /* Réduction de l'épaisseur de la police */
+}
+
+/* Carte de compétence */
+.hard-skill {
+    background: #3E4A61;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 120px;
+    max-width: 200px;
+    font-size: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hard-skill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Style de l'icône */
+.hard-skill-icon {
+    margin-bottom: 10px;
+}
+
+.hard-skill-icon img {
+    max-width: 80px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hard-skills-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hard-skill {
+        min-width: 80%;
+    }
+
+    .hard-skill-icon img {
+        max-width: 60px;
+    }
+}
+
+/* ABOUT */
+
+/* Section "About Me" */
+.about-me-section {
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'Jockey One', sans-serif;
+}
+
+.about-me-section h1 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: #FF007F;
+}
+
+/* Conteneur des passions */
+.passions-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Carte passion */
+.passion-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3E4A61;
+    color: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    margin: 0 auto;
+    max-width: 280px;
+    min-width: 220px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Animation au survol */
+.passion-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    background-color: #354259;
+    cursor: pointer;
+}
+
+/* Icône circulaire */
+.passion-logo {
+    width: 100px;
+    height: 100px;
+    background-color: #FF007F;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(255, 0, 127, 0.3);
+    transition: transform 0.4s ease;
+}
+
+.passion-logo img {
+    max-width: 60%;
+    height: auto;
+    z-index: 1;
+}
+
+/* Effet circulaire sur le fond */
+.passion-logo::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: width 0.4s ease, height 0.4s ease, top 0.4s ease, left 0.4s ease;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.passion-logo:hover::before {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+}
+
+/* Contenu de la passion */
+.passion-content {
+    text-align: center;
+}
+
+.passion-title {
+    font-size: 1.4rem;
+    color: #FF007F;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.passion-description {
+    font-size: 1rem;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Mockup image */
+.Mockup-image {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.Mockup-image img {
+    max-width: 50%;
+    height: auto;
+}
+
+
+/* Styles pour la section des informations personnelles */
+.personal-info-section {
+    background-color: #f9f9f9; /* Couleur d'arrière-plan claire */
+    padding: 50px 20px; /* Espacement interne */
+    text-align: center; /* Centrer le contenu */
+    border-bottom: 2px solid #ddd; /* Ligne de séparation */
+}
+
+.personal-info-container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centrer le conteneur */
+    display: flex;
+    flex-wrap: wrap; /* Pour la responsivité */
+    align-items: center; /* Aligner les éléments verticalement */
+    justify-content: center; /* Centrer horizontalement */
+    gap: 20px; /* Espacement entre les éléments */
+}
+
+.personal-photo {
+    flex: 0 0 300px; /* Taille augmentée pour mieux voir la photo */
+    height: 300px; /* Hauteur augmentée */
+    overflow: hidden; /* Masquer les débordements */
+    border-radius: 10px; /* Coins légèrement arrondis */
+    border: 3px solid #FF007F; /* Bordure colorée */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+}
+
+.personal-photo img {
+    width: 100%; /* Remplit le conteneur horizontalement */
+    height: 100%; /* Remplit le conteneur verticalement */
+    object-fit: cover; /* Rognage pour remplir le conteneur tout en gardant les proportions */
+    object-position: center 30%; /* Ajuste le cadrage pour centrer davantage sur le haut de la photo */
+}
+
+
+.personal-details {
+    flex: 1; /* Prend le reste de l'espace disponible */
+    text-align: left; /* Texte aligné à gauche */
+    max-width: 600px; /* Limite la largeur pour un contenu lisible */
+}
+
+.personal-name {
+    font-size: 2.2em; /* Taille légèrement augmentée pour le nom */
+    color: #333; /* Couleur sombre pour le texte */
+    font-weight: bold; /* Texte en gras */
+    margin-bottom: 10px; /* Espacement sous le titre */
+}
+
+.personal-age,
+.personal-description {
+    font-size: 1.2em; /* Taille légèrement plus grande */
+    color: #555; /* Couleur grise pour le texte */
+    margin: 5px 0; /* Espacement vertical */
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+    .personal-info-container {
+        flex-direction: column; /* Réorganiser en colonne */
+        text-align: center; /* Centrer tout */
+    }
+
+    .personal-details {
+        text-align: center; /* Texte centré */
+        margin-top: 20px; /* Ajouter un espacement au-dessus */
+    }
+}
+
+/* Style général pour la section des illustrations */
+.illustrations-section {
+    padding: 2rem 0;
+}
+
+.illustrations-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+/* Grille pour les illustrations */
+.illustrations-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+/* Style pour chaque carte d'illustration */
+.illustration-item {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.illustration-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Style pour l'image dans la carte */
+.illustration-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-top: 150%; /* Ratio vertical pour les images (ex : portrait) */
+}
+
+.illustration-image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%; /* Ajustement automatique de la largeur */
+    height: 100%; /* Remplir la hauteur de l'élément parent */
+    transform: translateX(-50%); /* Centrer l'image horizontalement */
+    object-fit: cover; /* Couvrir tout l'espace sans déformer l'image */
+    transition: transform 0.3s ease;
+}
+
+.illustration-item:hover .illustration-image-wrapper img {
+    transform: translateX(-50%) scale(1.05); /* Légère augmentation au survol */
+}
+
+/* Style pour la légende au survol */
+.illustration-hover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 0.75rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.illustration-item:hover .illustration-hover {
+    transform: translateY(0);
+}
+
+.illustration-legend {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .illustrations-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .illustrations-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.single-projets-aca {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Titre principal */
+h1, h3 {
+    color: #FF007F;
+}
+
+/* Titre du projet */
+.projet-detail h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.projet-detail h1:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #FF007F;
+    margin: 15px auto 0;
+}
+
+/* Date du projet */
+.projet-date {
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: slideInFromLeft 1s ease-out;
+}
+
+/* Description */
+.projet-description {
+    margin-bottom: 30px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.projet-description h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #FF007F;
+    text-transform: uppercase;
+}
+
+.projet-description p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    text-align: justify;
+    color: #E0E0E0;
+}
+
+/* Images */
+.projet-images {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.projet-images img {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 3px solid #FF007F;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.projet-images img:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Applications utilisées */
+.projet-applications {
+    margin-bottom: 30px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.projet-applications h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #FF007F;
+    text-transform: uppercase;
+}
+
+.projet-applications ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.projet-applications li {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.app-logo img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #FF007F;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.app-logo img:hover {
+    transform: scale(1.3);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Tooltip pour le hover */
+.app-logo:hover:after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FF007F;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.app-logo:after {
+    opacity: 0;
+}
+
+/* Bouton pour le lien */
+.btn-lien {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #FF007F;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+    margin: 30px auto;
+}
+
+.btn-lien:hover {
+    background: #E0006F;
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Contexte du projet */
+.projet-contexte {
+    margin-bottom: 30px;
+    animation: fadeIn 1.8s ease-in-out;
+}
+
+.projet-contexte h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #FF007F;
+    text-transform: uppercase;
+}
+
+.projet-contexte p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    text-align: justify;
+    color: #E0E0E0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
